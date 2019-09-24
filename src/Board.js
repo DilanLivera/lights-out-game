@@ -70,6 +70,7 @@ class Board extends Component {
             key={coord}
             isLit={this.state.board[y][x]}
             flipCellsAroundMe={() => this.flipCellsAround(coord)}
+            data-test="cell"
           />
         );
       }
@@ -86,12 +87,12 @@ class Board extends Component {
     return (
       <div>
         {this.state.hasWon ? (
-          <div className='winner'>
+          <div className='winner' data-test="winner">
             <span className='neon-orange'>YOU</span>
             <span className='neon-blue'>WIN!</span>
           </div>
         ) : (
-          <div>
+          <div data-test="board">
             <div className='Board-title'>
               <div className='neon-orange'>Lights</div>
               <div className='neon-blue'>Out</div>
